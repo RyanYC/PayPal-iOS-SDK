@@ -1,6 +1,58 @@
 PayPal iOS SDK release notes
 ============================
 
+2.14.0
+------
+* Fix issue with iOS 9 right to left language support
+  See [issue #389](https://github.com/paypal/PayPal-iOS-SDK/issues/389)
+
+2.13.2
+------
+* Fix issue with small dynamic text truncating prices.
+  See [issue #381](https://github.com/paypal/PayPal-iOS-SDK/issues/381)
+
+2.13.1
+------
+* Update card.io to 5.3.1
+
+2.13.0
+------
+* Add nullability annotations to headers
+* Minor internal code cleanup
+
+2.12.9
+------
+* Fix issue determining valid negative amounts. See [issue #369](https://github.com/paypal/PayPal-iOS-SDK/issues/369).
+
+2.12.8
+------
+* Update network code and general code cleanup
+
+2.12.7
+------
+* Update networking code for iOS 7 to fix potential ClassicURLConnection crash
+
+2.12.6
+------
+* When the wrong PayPal login credentials are used, use shake animation
+  and allow user to login again without having to click on Pay button again
+
+2.12.5
+------
+* In CocoaPods, add subspecs to allow PayPal SDK to be used without card.io. By
+  default, all libraries are included. If you do not want to use card.io, use
+  the `Core` subspec like `PayPal-iOS-SDK/Core` in your Podfile. See the
+  SampleApp without card.io to see how you can setup your application without
+  credit card scanning. See [issue #358](https://github.com/paypal/PayPal-iOS-SDK/issues/358).
+* Update to use NSURLSession whenever possible. Falls back to NSURLConnection for iOS 6.
+
+2.12.4
+------
+* Split card.io libraries into 3 different libraries to help reduce the size of the individual files. [issue #339](https://github.com/paypal/PayPal-iOS-SDK/issues/339)
+  You should link to `libPayPalMobile.a`, `libCardIO.a`, `libopencv_core.a', and `libopencv_imgproc.a` for your app now. See notes in 2.12.2 for more information.
+* Fix issue with iOS 6 API availability with call to initWithBase64EncodedData:options: [issue #351](https://github.com/paypal/PayPal-iOS-SDK/issues/351)
+* Switch to use vendored_libraries in `PayPal-iOS-SDK.podspec` to help some CocoaPod issues
+
 2.12.3
 ------
 * Fixed long string description text wrapping for iOS9
